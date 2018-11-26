@@ -1052,7 +1052,7 @@ client.on('message', message => { // Falsteni Is Here
     }); // Falsteni Is Here
 
 client.on("message",  message => {
-    var prefix = "y";
+    var prefix = "$";
     let args = message.content.split(' ').slice(1);
 if(message.content.startsWith(prefix + 'nic')) {
    if (!message.member.hasPermission("MANAGE_NICKNAMES")) {
