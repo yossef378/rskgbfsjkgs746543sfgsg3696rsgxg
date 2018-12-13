@@ -8,7 +8,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : Y.K.M ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Hi im pearl gaming bot`,"www.pearlgamingfourm.ga")
+client.user.setGame(`Hi im pearl gaming bot by y.k.m`,"")
 client.user.setStatus("dnd")
 });
 
@@ -27,6 +27,26 @@ if(!devs.includes(message.author.id)) return;
     return;
   }
 });
+
+client.on('guildMemberAdd', msg => { 
+    var embed = new Discord.RichEmbed()
+    .setAuthor(msg.user.username, msg.user.avatarURL)
+    .setThumbnail(msg.user.avatarURL)
+    .setImage('https://drive.google.com/file/d/1KpRhqCw6AcL06OyJSPmWQ5Ro6zwZL5y5/view?usp=drivesdk')     
+    .setTitle('New Member!')
+    .setDescription('Welcome To server')
+    .addField('**ID Member:',"" +  msg.user.id, true)
+    .addField('**Tag Member**', msg.user.discriminator, true)
+    .addField('**Member Created At', msg.user.createdAt, true)
+    .addField(' 👤   You Number',`**[ ${msg.guild.memberCount} ]**`,true)
+    .setColor('GREEN')
+    .setFooter(msg.guild.name, msg.guild.iconURL, true)
+    var channel = msg.guild.channels.find('name', 'chat')         
+    if (!channel) return;
+    channel.send({embed : embed});
+    });
+
+
 
 client.on('message', message => {
  var prefix = "$"
