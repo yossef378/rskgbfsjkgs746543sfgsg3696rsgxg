@@ -32,7 +32,7 @@ client.on('guildMemberAdd', msg => {
     var embed = new Discord.RichEmbed()
     .setAuthor(msg.user.username, msg.user.avatarURL)
     .setThumbnail(msg.user.avatarURL)
-    .setImage('https://drive.google.com/file/d/1KpRhqCw6AcL06OyJSPmWQ5Ro6zwZL5y5/view?usp=drivesdk')     
+    .setImage('https://d.top4top.net/p_1077e2nwe1.jpeg')     
     .setTitle('New Member!')
     .setDescription('Welcome To server')
     .addField('**ID Member:',"" +  msg.user.id, true)
@@ -41,7 +41,7 @@ client.on('guildMemberAdd', msg => {
     .addField(' 👤   You Number',`**[ ${msg.guild.memberCount} ]**`,true)
     .setColor('GREEN')
     .setFooter(msg.guild.name, msg.guild.iconURL, true)
-    var channel = msg.guild.channels.find('name', 'chat')         
+    var channel = msg.guild.channels.find('name', 'welcome')         
     if (!channel) return;
     channel.send({embed : embed});
     });
@@ -946,21 +946,7 @@ reaction2.on("collect", r => {
 });
 
 
-client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', 'welcome');
-    let memberavatar = member.user.avatarURL
-      if (!channel) return; 
-    let embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setThumbnail(memberavatar)
-        .addField(':running_shirt_with_sash: | name :  ',`${member}`)
-        .addField(':loudspeaker: | نورت السيرفر ي قلبي' , `Welcome to the server, ${member}`)
-        .addField(':id: | user :', "**[" + `${member.id}` + "]**" )
-                .addField('➡| انت العضو رقم',`${member.guild.memberCount}`)
-               
-                  .addField("Name:",`<@` + `${member.id}` + `>`, true)
-                      
-                                     .addField(' الـسيرفر', `${member.guild.name}`,true)
+
                                        
      .setFooter("****")
         .setTimestamp()
