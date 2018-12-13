@@ -34,7 +34,7 @@ client.on('guildMemberAdd', msg => {
     .setThumbnail(msg.user.avatarURL)
     .setImage('https://d.top4top.net/p_1077e2nwe1.jpeg')     
     .setTitle('New Member!')
-    .setDescription('Welcome To ... server')
+    .setDescription('Welcome To server')
     .addField('**ID Member:',"" +  msg.user.id, true)
     .addField('**Tag Member**', msg.user.discriminator, true)
     .addField('**Member Created At', msg.user.createdAt, true)
